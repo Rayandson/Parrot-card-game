@@ -1,10 +1,10 @@
-let gifs = ['<div class="carta tipo1" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/bobrossparrot.gif" alt="" /></div></div>','<div class="carta tipo1" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/bobrossparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo2" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/explodyparrot.gif" alt="" /></div></div>','<div class="carta tipo2" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/explodyparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo3" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/fiestaparrot.gif" alt="" /></div></div>','<div class="carta tipo3" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/fiestaparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo4" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/metalparrot.gif" alt="" /></div></div>','<div class="carta tipo4" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/metalparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo5" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/revertitparrot.gif" alt="" /></div></div>','<div class="carta tipo5" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/revertitparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>','<div class="carta tipo6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>','<div class="carta tipo7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>']
+let gifs = ['<div class="carta tipo1" name="1" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/bobrossparrot.gif" alt="" /></div></div>','<div class="carta tipo1" name="1" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/bobrossparrot.gif" alt="" /></div></div>',
+'<div class="carta tipo2" name="2" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/explodyparrot.gif" alt="" /></div></div>','<div class="carta tipo2" name="2" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/explodyparrot.gif" alt="" /></div></div>',
+'<div class="carta tipo3" name="3" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/fiestaparrot.gif" alt="" /></div></div>','<div class="carta tipo3" name="3" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/fiestaparrot.gif" alt="" /></div></div>',
+'<div class="carta tipo4" name="4" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/metalparrot.gif" alt="" /></div></div>','<div class="carta tipo4" name="4" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/metalparrot.gif" alt="" /></div></div>',
+'<div class="carta tipo5" name="5" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/revertitparrot.gif" alt="" /></div></div>','<div class="carta tipo5" name="5" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/revertitparrot.gif" alt="" /></div></div>',
+'<div class="carta tipo6" name="6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>','<div class="carta tipo6" name="6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>',
+'<div class="carta tipo7" name="7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>','<div class="carta tipo7" name="7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>']
 
 // gifs.sort(comparador); // Após esta linha, a minhaArray estará embaralhada
 
@@ -42,11 +42,58 @@ function criarCartas() {
     }
 }
 
-criarCartas();
+ criarCartas();
 
+let compara2cartas = []; 
+let cartasViradas = "";
+let valor = "";
+let paresCertos = 0;
 function virarCarta(carta) {
     let back = carta.querySelector(".back-face");
     let front = carta.querySelector(".front-face")
     back.style.transform = "rotateY(0deg)";
     front.style.transform = "rotateY(-180deg)";
+    carta.classList.add("virada");
+    cartasViradas = document.querySelectorAll(".virada");
+    valor = carta.innerHTML;
+    compara2cartas.push(`${valor}`);
+    
+    
+    if(compara2cartas.length === 2) {
+        if(compara2cartas[0] === compara2cartas[1]) {
+            paresCertos++;
+            compara2cartas.length = 0;
+            for(let i=0; i<2; i++) {
+            (cartasViradas[i]).classList.remove("virada");
+            cartasViradas.length = 0;
+            //document.classList.remove("virada");
+            }
+        } else {
+            compara2cartas.length = 0;
+            setTimeout(desviraCarta, 2000);
+        }
+    }
+}
+let viradas = "";
+let tras = "";
+let frente = "";
+function desviraCarta() {
+    viradas = document.querySelectorAll(".virada");
+    
+    for(i=0; i<2; i++) {
+        tras = (viradas[i]).querySelector(".back-face");
+        frente = (viradas[i]).querySelector(".front-face");
+        tras.style.transform = "rotateY(-180deg)";
+        frente.style.transform = "rotateY(0deg)";
+        (viradas[i]).classList.remove("virada");
+    }
+
+   // viradas.length = 0;
+  //  tras = "";
+  //  frente = "";
+    // tras = viradas.querySelector(".back-face");
+    // frente = viradas.querySelector(".front-face")
+    // tras.style.transform = "rotateY(0deg)";
+    // frente.style.transform = "rotateY(-220deg)";
+  
 }
