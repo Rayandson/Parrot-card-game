@@ -6,13 +6,13 @@ let gifs = ['<div class="carta tipo1" onclick="virarCarta(this)"><div class="fro
 '<div class="carta tipo6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>','<div class="carta tipo6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>',
 '<div class="carta tipo7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>','<div class="carta tipo7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>']
 
-gifs.sort(comparador); // Após esta linha, a minhaArray estará embaralhada
+// gifs.sort(comparador); // Após esta linha, a minhaArray estará embaralhada
 
 
-// Esta função pode ficar separada do código acima, onde você preferir
-function comparador() { 
-	return Math.random() - 0.5; 
-}
+// // Esta função pode ficar separada do código acima, onde você preferir
+// function comparador() { 
+// 	return Math.random() - 0.5; 
+//  }
 
 let qntd = 0;
 let condicao = false;
@@ -22,11 +22,23 @@ if(qntd%2===0 && qntd>=4 && qntd <=14) {
     condicao = true;
 }
 }
-
-function criarCartas() {
+let pares = [];
+function gerarPares() {
     for(let i = 0; i<qntd; i++) {
+    pares.push(`${gifs[i]}`);
+    }
+}
+
+gerarPares();
+pares.sort(comparador);
+
+function comparador() { 
+	return Math.random() - 0.5; 
+ }
+function criarCartas() {
+    for(let j = 0; j<qntd; j++) {
         let cartas = document.querySelector(".cartas");
-        cartas.innerHTML = cartas.innerHTML + `${gifs[i]}`
+        cartas.innerHTML = cartas.innerHTML + `${pares[j]}`
     }
 }
 
