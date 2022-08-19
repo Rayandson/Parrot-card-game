@@ -48,7 +48,10 @@ let compara2cartas = [];
 let cartasViradas = "";
 let valor = "";
 let paresCertos = 0;
+let liberaClique = true;
 function virarCarta(carta) {
+
+    if(liberaClique === true) {
     let back = carta.querySelector(".back-face");
     let front = carta.querySelector(".front-face")
     back.style.transform = "rotateY(0deg)";
@@ -70,9 +73,12 @@ function virarCarta(carta) {
             }
         } else {
             compara2cartas.length = 0;
+            liberaClique = false;
             setTimeout(desviraCarta, 2000);
+            
         }
     }
+}
 }
 let viradas = "";
 let tras = "";
@@ -87,7 +93,7 @@ function desviraCarta() {
         frente.style.transform = "rotateY(0deg)";
         (viradas[i]).classList.remove("virada");
     }
-
+    liberaClique = true;
    // viradas.length = 0;
   //  tras = "";
   //  frente = "";
