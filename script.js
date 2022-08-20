@@ -49,8 +49,8 @@ let cartasViradas = "";
 let valor = "";
 let paresCertos = 0;
 let liberaClique = true;
+let contaJogadas = 0;
 function virarCarta(carta) {
-
     if(liberaClique === true) {
     let back = carta.querySelector(".back-face");
     let front = carta.querySelector(".front-face")
@@ -58,23 +58,29 @@ function virarCarta(carta) {
     front.style.transform = "rotateY(-180deg)";
     carta.classList.add("virada");
     cartasViradas = document.querySelectorAll(".virada");
+    carta.classList.add("inactive");
     valor = carta.innerHTML;
     compara2cartas.push(`${valor}`);
-    
+    contaJogadas++;
     
     if(compara2cartas.length === 2) {
         if(compara2cartas[0] === compara2cartas[1]) {
             paresCertos++;
             compara2cartas.length = 0;
+            if(paresCertos === qntd/2) {
+                setTimeout(fimDeJogo, 300);
+            }
             for(let i=0; i<2; i++) {
             (cartasViradas[i]).classList.remove("virada");
             cartasViradas.length = 0;
-            //document.classList.remove("virada");
             }
         } else {
+            for(let j=0; j<2; j++) {
+                (cartasViradas[j]).classList.remove("inactive");
+            }
             compara2cartas.length = 0;
             liberaClique = false;
-            setTimeout(desviraCarta, 2000);
+            setTimeout(desviraCarta, 1000);
             
         }
     }
@@ -94,12 +100,8 @@ function desviraCarta() {
         (viradas[i]).classList.remove("virada");
     }
     liberaClique = true;
-   // viradas.length = 0;
-  //  tras = "";
-  //  frente = "";
-    // tras = viradas.querySelector(".back-face");
-    // frente = viradas.querySelector(".front-face")
-    // tras.style.transform = "rotateY(0deg)";
-    // frente.style.transform = "rotateY(-220deg)";
-  
+}
+
+function fimDeJogo() {
+    alert(`Você ganhou em ${contaJogadas} jogadas!`);
 }
