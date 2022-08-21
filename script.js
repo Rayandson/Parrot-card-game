@@ -35,11 +35,23 @@ pares.sort(comparador);
 function comparador() { 
 	return Math.random() - 0.5; 
  }
+let meuInterval;
+ function contar() {
+    meuInterval = setInterval(atualizaContagem, 1000);
+ }
+let seg = 0;
+ function atualizaContagem() {
+    seg = seg + 1;
+    let contador = document.querySelector(".seg");
+    contador.innerHTML = `${seg}`;
+ }
+
 function criarCartas() {
     for(let j = 0; j<qntd; j++) {
         let cartas = document.querySelector(".cartas");
         cartas.innerHTML = cartas.innerHTML + `${pares[j]}`
     }
+    contar();
 }
 
  criarCartas();
@@ -69,6 +81,7 @@ function virarCarta(carta) {
             compara2cartas.length = 0;
             if(paresCertos === qntd/2) {
                 setTimeout(fimDeJogo, 300);
+                clearInterval(meuInterval);
             }
             for(let i=0; i<2; i++) {
             (cartasViradas[i]).classList.remove("virada");
@@ -103,5 +116,5 @@ function desviraCarta() {
 }
 
 function fimDeJogo() {
-    alert(`Você ganhou em ${contaJogadas} jogadas!`);
+    alert(`Você ganhou em ${contaJogadas} jogadas e ${seg} segundos!`);
 }
