@@ -18,7 +18,7 @@ body {
     padding: 0 5px;
     position: fixed;
     left: 30px;
-    top: 88vh;
+    top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
