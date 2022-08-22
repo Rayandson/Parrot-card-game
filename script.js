@@ -6,13 +6,6 @@ let gifs = ['<div class="carta tipo1" name="1" onclick="virarCarta(this)"><div c
 '<div class="carta tipo6" name="6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>','<div class="carta tipo6" name="6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>',
 '<div class="carta tipo7" name="7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>','<div class="carta tipo7" name="7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>']
 
-// gifs.sort(comparador); // Após esta linha, a minhaArray estará embaralhada
-
-
-// // Esta função pode ficar separada do código acima, onde você preferir
-// function comparador() { 
-// 	return Math.random() - 0.5; 
-//  }
 
 let qntd = 0;
 let condicao = false;
@@ -114,7 +107,20 @@ function desviraCarta() {
     }
     liberaClique = true;
 }
-
+let pontuacao;;
 function fimDeJogo() {
-    alert(`Você ganhou em ${contaJogadas} jogadas e ${seg} segundos!`);
+    pontuacao = 100000*qntd/((10*contaJogadas)+(5*seg))
+    alert(`Você ganhou em ${contaJogadas} jogadas e ${seg} segundos!\nScore: ${pontuacao.toFixed(0)} pts`);
+    let perguntaDenovo = true;
+    while(perguntaDenovo === true) {
+    let jogaNovamente = prompt("Deseja jogar novamente ?")
+    if (jogaNovamente === "sim") {
+        perguntaDenovo = false;
+        location.reload();
+    } else if (jogaNovamente === "não") {
+        perguntaDenovo = false;
+    } else {perguntaDenovo = true;}
 }
+}
+
+

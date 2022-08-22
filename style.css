@@ -13,11 +13,12 @@ body {
 }
 
 .timer {
-    width: 70px;
-    height: 70px;
+    min-width: 50px;
+    height: 55px;
+    padding: 0 5px;
     position: fixed;
     left: 30px;
-    top: 15px;
+    top: 88vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,6 +34,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 27px;
     color: #eb7c21;
+
 }
 .timer-texto {
     font-size: 14px;
@@ -43,7 +45,9 @@ body {
     height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .titulo {
@@ -97,3 +101,66 @@ body {
 .inactive {
     pointer-events: none;
 }
+
+@media (max-width: 414px) {
+    .cartas {
+        width: 78%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column; 
+        flex-wrap: nowrap; 
+         justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    } 
+
+    .timer {
+        width: 30px;
+        height: 30px;
+        position: fixed;
+        left: 100px;
+        top: 93vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        border-radius: 5px;
+        }
+    .timer-texto {
+       display: none;
+    }
+    .titulo {
+        margin-bottom: 30px;
+    }
+}
+   
+@media (max-width: 872px) {
+    .cartas {
+        width: 78%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+    .timer {
+    width: 50px;
+    height: 30px;
+    position: fixed;
+    left: 10px;
+    top: 93vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 5px;
+    }
+    .timer-texto {
+       display: none;
+    }
+    .seg {
+        font-size: 22px;
+    }
+    }
