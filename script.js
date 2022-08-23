@@ -6,6 +6,23 @@ let gifs = ['<div class="carta tipo1" name="1" onclick="virarCarta(this)"><div c
 '<div class="carta tipo6" name="6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>','<div class="carta tipo6" name="6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>',
 '<div class="carta tipo7" name="7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>','<div class="carta tipo7" name="7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>']
 
+const correctSound = new Audio();
+correctSound.src = "./sons/correct-choice.wav";
+function somCorreto() {
+    correctSound.play();
+}
+
+const incorrect_sound = new Audio();
+incorrect_sound.src = "./sons/wronganswer.mp3"
+function somIncorreto() {
+    incorrect_sound.play();
+}
+
+const congrats_sound = new Audio();
+congrats_sound.src = "./sons/congrats1.wav"
+function somVictory() {
+    congrats_sound.play();
+}
 
 let qntd = 0;
 let condicao = false;
@@ -71,8 +88,10 @@ function virarCarta(carta) {
     if(compara2cartas.length === 2) {
         if(compara2cartas[0] === compara2cartas[1]) {
             paresCertos++;
+            setTimeout(somCorreto, 200);
             compara2cartas.length = 0;
             if(paresCertos === qntd/2) {
+                setTimeout(somVictory, 200);
                 setTimeout(fimDeJogo, 300);
                 clearInterval(meuInterval);
             }
@@ -87,6 +106,7 @@ function virarCarta(carta) {
             compara2cartas.length = 0;
             liberaClique = false;
             setTimeout(desviraCarta, 1000);
+            setTimeout(somIncorreto, 200);
             
         }
     }
