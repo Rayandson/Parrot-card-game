@@ -1,11 +1,7 @@
-let gifs = ['<div class="carta tipo1" name="1" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/bobrossparrot.gif" alt="" /></div></div>','<div class="carta tipo1" name="1" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/bobrossparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo2" name="2" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/explodyparrot.gif" alt="" /></div></div>','<div class="carta tipo2" name="2" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/explodyparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo3" name="3" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/fiestaparrot.gif" alt="" /></div></div>','<div class="carta tipo3" name="3" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/fiestaparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo4" name="4" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/metalparrot.gif" alt="" /></div></div>','<div class="carta tipo4" name="4" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/metalparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo5" name="5" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/revertitparrot.gif" alt="" /></div></div>','<div class="carta tipo5" name="5" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/revertitparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo6" name="6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>','<div class="carta tipo6" name="6" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/tripletsparrot.gif" alt="" /></div></div>',
-'<div class="carta tipo7" name="7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>','<div class="carta tipo7" name="7" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/unicornparrot.gif" alt="" /></div></div>']
-
+let gifs = ['footballparrot','footballparrot','mustacheparrot','mustacheparrot','birthdayparrot','birthdayparrot','headbangingparrot',
+'headbangingparrot','scientistparrot','scientistparrot','soccerparrot','soccerparrot','pirateparrot','pirateparrot','brazilparrot','brazilparrot',
+'popcornparrot','popcornparrot','policeparrot','policeparrot','sunglassparrot','sunglassparrot','tenisparrot','tenisparrot']
+let liberaClique = true;
 const correctSound = new Audio();
 correctSound.src = "./sons/correct-choice.wav";
 function somCorreto() {
@@ -27,8 +23,8 @@ function somVictory() {
 let qntd = 0;
 let condicao = false;
 while (condicao === false) {
-qntd = prompt("Esolha a quantidade de cartas (Número par entre 4 e 14):");
-if(qntd%2===0 && qntd>=4 && qntd <=14) {
+qntd = prompt("Esolha a quantidade de cartas (Número par entre 4 e 24):");
+if(qntd%2===0 && qntd>=4 && qntd <=24) {
     condicao = true;
 }
 }
@@ -38,6 +34,7 @@ function gerarPares() {
     pares.push(`${gifs[i]}`);
     }
 }
+
 
 gerarPares();
 pares.sort(comparador);
@@ -59,7 +56,7 @@ let seg = 0;
 function criarCartas() {
     for(let j = 0; j<qntd; j++) {
         let cartas = document.querySelector(".cartas");
-        cartas.innerHTML = cartas.innerHTML + `${pares[j]}`
+        cartas.innerHTML = cartas.innerHTML + `<div class="carta" onclick="virarCarta(this)"><div class="front-face face"><img src="./images/front.png" alt="" /></div><div class="back-face face"><img src="./images/${pares[j]}.gif" alt="" /></div></div>`
     }
     contar();
 }
@@ -70,7 +67,6 @@ let compara2cartas = [];
 let cartasViradas = "";
 let valor = "";
 let paresCertos = 0;
-let liberaClique = true;
 let contaJogadas = 0;
 function virarCarta(carta) {
     if(liberaClique === true) {
@@ -112,6 +108,24 @@ function virarCarta(carta) {
     }
 }
 }
+
+//     function redimensionarCartas(){
+//         if(qntd>12){
+//         let cartas = document.querySelector(".cartas");
+//         let carta = document.querySelectorAll(".carta");
+//         let imgCarta = document.querySelectorAll(".carta img");
+
+//         for(let i=0; i<=qntd; i++){
+//         cartas.style.width = "1100px";
+//         carta[i].style.width = "110px";
+//         carta[i].style.height = "137px";
+//         imgCarta[i].style.width = "85px";
+//         }
+//     }
+    
+// }
+// redimensionarCartas();
+
 let viradas = "";
 let tras = "";
 let frente = "";
